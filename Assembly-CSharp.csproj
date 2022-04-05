@@ -39,6 +39,8 @@
      <Compile Include="Assets\Bandits - Pixel Art\Demo\Bandit.cs" />
      <Compile Include="Assets\Bandits - Pixel Art\Demo\Sensor_Bandit.cs" />
      <Compile Include="Assets\BanditEnemy.cs" />
+     <Compile Include="Assets\Zlock.cs" />
+     <None Include="Assets\Pixel Monster Pack\notes.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\2020.3.27f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -261,11 +263,11 @@
     <Reference Include="UnityEditor.UnityConnectModule">
         <HintPath>C:\Program Files\Unity\2020.3.27f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-        <HintPath>C:\Users\Lukas\OneDrive\Documents\Sem4\Unity\Uge1\Game\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Pathfinding.Ionic.Zip.Reduced">
         <HintPath>C:\Users\Lukas\OneDrive\Documents\Sem4\Unity\Uge1\Game\Assets\AstarPathfindingProject\Plugins\DotNetZip\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+        <HintPath>C:\Users\Lukas\OneDrive\Documents\Sem4\Unity\Uge1\Game\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:\Program Files\Unity\2020.3.27f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -702,19 +704,25 @@
     <Reference Include="Unity.2D.SpriteShape.Runtime">
         <HintPath>C:\Users\Lukas\OneDrive\Documents\Sem4\Unity\Uge1\Game\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Tilemap.Extras">
+        <HintPath>C:\Users\Lukas\OneDrive\Documents\Sem4\Unity\Uge1\Game\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Extras.Editor">
+        <HintPath>C:\Users\Lukas\OneDrive\Documents\Sem4\Unity\Uge1\Game\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
-      <Project>{d7717704-7a7c-097d-37f5-02c95309643e}</Project>
-      <Name>AstarPathfindingProjectEditor</Name>
+    <ProjectReference Include="PackageToolsEditor.csproj">
+      <Project>{ef6a6683-7952-293b-f698-f32901ec804f}</Project>
+      <Name>PackageToolsEditor</Name>
     </ProjectReference>
     <ProjectReference Include="AstarPathfindingProject.csproj">
       <Project>{63273c7d-a044-0ad0-6b7c-fc98e83eb1d3}</Project>
       <Name>AstarPathfindingProject</Name>
     </ProjectReference>
-    <ProjectReference Include="PackageToolsEditor.csproj">
-      <Project>{ef6a6683-7952-293b-f698-f32901ec804f}</Project>
-      <Name>PackageToolsEditor</Name>
+    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
+      <Project>{d7717704-7a7c-097d-37f5-02c95309643e}</Project>
+      <Name>AstarPathfindingProjectEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

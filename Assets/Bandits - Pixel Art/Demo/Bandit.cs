@@ -36,8 +36,8 @@ public class Bandit : MonoBehaviour {
             transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
         // Move
-        //m_body2d.velocity = new Vector2(inputX * m_speedx, m_body2d.velocity.x);
-        //m_body2d.velocity = new Vector2(inputY * m_speedy, m_body2d.velocity.y);
+        m_body2d.velocity = new Vector2(inputX * 0, 0);
+        m_body2d.velocity = new Vector2(inputY * 0, 0);
 
         Vector3 movement = new Vector3((speed.x/10) * inputX, (speed.y/10)*inputY,0);
         movement *= Time.deltaTime;
