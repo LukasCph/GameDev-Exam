@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 2b5a1160550d16b41a42c50e1606a007
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pfHealthBar: {fileID: 3276636616822525238, guid: 0d97a37a4de87404383b377ac1f754eb, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

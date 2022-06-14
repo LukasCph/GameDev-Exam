@@ -1,7 +1,16 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Bandit : MonoBehaviour {
+
+
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public float attackRate = 8f;
+    float nextAttackTime = 0f;
+    public LayerMask enemyLayers;
+    public int attackDamage;
+	
 
     [SerializeField] float      m_speedx = 4.0f;
     [SerializeField] float      m_speedy = 4.0f;
@@ -60,8 +69,13 @@ public class Bandit : MonoBehaviour {
             m_animator.SetTrigger("Hurt");
 
         //Attack
-        else if(Input.GetKeyDown("e")) {
-            m_animator.SetTrigger("Attack");
+         
+
+        else if (Input.GetKeyDown("e")){
+           if(Time.time >= nextAttackTime) {
+                    Attack();
+                    nextAttackTime = Time.time + 1f/attackRate;
+            } 
         }
 
         //Change between idle and combat idle
@@ -82,4 +96,28 @@ public class Bandit : MonoBehaviour {
         else
             m_animator.SetInteger("AnimState", 0);
     }
+
+    public void Attack(){
+        m_animator.SetTrigger("Attack");
+
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        foreach(Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            Debug.Log("We hit "+enemy.name+ "and inflicted " +attackDamage +"damage" );
+        }
+    
+    }
+
+    void OnDrawGizmosSelected() {
+
+        if (attackPoint == null)
+        return;
+
+        Gizmos.DrawWireSphere(attackPoint.position,attackRange);
+        
+    }
+
+
 }

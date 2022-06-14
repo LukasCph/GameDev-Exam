@@ -183,14 +183,14 @@ namespace Pathfinding {
 		[System.Obsolete("Use the destination property or the AIDestinationSetter component instead")]
 		public Transform target {
 			get {
-				var setter = GetComponent<AIDestinationSetter>();
-				return setter != null ? setter.target : null;
+				var setter = GetComponent("Player").transform;
+				return setter != null ? setter.transform : null;
 			}
 			set {
 				targetCompatibility = null;
-				var setter = GetComponent<AIDestinationSetter>();
-				if (setter == null) setter = gameObject.AddComponent<AIDestinationSetter>();
-				setter.target = value;
+				var setter = GetComponent("Player").transform;
+				if (setter == null) setter = GameObject.Find("Player").transform;
+				setter = value;
 				destination = value != null ? value.position : new Vector3(float.PositiveInfinity, float.PositiveInfinity, float.PositiveInfinity);
 			}
 		}

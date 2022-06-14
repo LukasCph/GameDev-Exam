@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 90157295865737159}
   - component: {fileID: 209186950954202361}
   - component: {fileID: 8524173521399283536}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HeavyBandit
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4497640553005464871}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,9 +163,10 @@ GameObject:
   - component: {fileID: 4497640553234052929}
   - component: {fileID: 4497640553234052928}
   - component: {fileID: 4497640553234052935}
-  m_Layer: 0
+  - component: {fileID: -2890388696763617040}
+  m_Layer: 7
   m_Name: Bandit
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,7 +230,7 @@ MonoBehaviour:
   radius: 0.8
   height: 2
   canMove: 1
-  maxSpeed: 1.4
+  maxSpeed: 1.8
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:
     serializedVersion: 2
@@ -264,11 +265,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4497640553234052930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a78bca39f2d50e4c93e1fbbefb3ce10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  target: {fileID: 0}
 --- !u!50 &4497640553234052935
 Rigidbody2D:
   serializedVersion: 4
@@ -290,3 +290,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-2890388696763617040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4497640553234052930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7528e91bacbf96349a391873d5b1a0c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 150

@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 1287481057921707778}
   - component: {fileID: -693656852892076053}
   - component: {fileID: -5740387224799606388}
-  m_Layer: 0
+  - component: {fileID: 933260441921731135}
+  m_Layer: 7
   m_Name: HeavyBandit
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,7 +173,7 @@ MonoBehaviour:
   rotationSpeed: 360
   slowdownDistance: 0.6
   pickNextWaypointDist: 2
-  endReachedDistance: 0.2
+  endReachedDistance: 0.4
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -223,8 +224,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1463392086428580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a78bca39f2d50e4c93e1fbbefb3ce10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  target: {fileID: 4805181885227780, guid: 2e2183501755a214591e802f3aff33d2, type: 3}
+--- !u!114 &933260441921731135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463392086428580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7528e91bacbf96349a391873d5b1a0c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 150
