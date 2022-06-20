@@ -49,11 +49,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba8b435a8dc3f604e9a13c4acd7081c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   attackPoint: {fileID: 1610740692229829650}
   attackRange: 0.5
+  attackRate: 8
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
+  attackDamage: 0
   m_speedx: 3
   m_speedy: 3
   m_jumpForce: 7.5

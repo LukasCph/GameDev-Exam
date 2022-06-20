@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6670871302181788717}
   - component: {fileID: 1628622062}
   - component: {fileID: -4079935971541313687}
+  - component: {fileID: 6656794476615376374}
   m_Layer: 7
   m_Name: GreenSlime
   m_TagString: Enemy
@@ -169,7 +170,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7528e91bacbf96349a391873d5b1a0c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player:
+    serializedVersion: 2
+    m_Bits: 256
+  c_collider: {fileID: 1628622062}
   maxHealth: 100
+  dmg: 10
+--- !u!95 &6656794476615376374
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6670871302181788712}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a474740723d13814c8ca926da91a202d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6670871302288741964
 GameObject:
   m_ObjectHideFlags: 0
