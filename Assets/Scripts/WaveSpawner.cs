@@ -3,6 +3,8 @@ using System.Collections;
 
 public class WaveSpawner : MonoBehaviour {
 
+	public Transform EnemyHolder;
+
 	public enum SpawnState { SPAWNING, WAITING, COUNTING };
 
 	[System.Serializable]
@@ -129,6 +131,7 @@ public class WaveSpawner : MonoBehaviour {
 		Debug.Log("Spawning Enemy: " + _enemy.name);
 
 		Transform _sp = spawnPoints[ Random.Range (0, spawnPoints.Length) ];
-		Instantiate(_enemy, _sp.position, _sp.rotation);
+		var enemy = Instantiate(_enemy, _sp.position, _sp.rotation);
+		enemy.transform.parent = EnemyHolder;
 	}
 }

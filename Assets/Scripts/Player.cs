@@ -1,21 +1,14 @@
 using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour {
+public class Player : Entity {
 
-    public int health;
-    public int maxHealth = 100;
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public float attackRate = 8f;
     float nextAttackTime = 0f;
     public LayerMask enemyLayers;
     public int attackDamage;
-	
-
-    [SerializeField] float      m_speedx = 4.0f;
-    [SerializeField] float      m_speedy = 4.0f;
-    [SerializeField] float      m_jumpForce = 7.5f;
 
     public Vector2 speed = new Vector2(50,50);
 
@@ -23,15 +16,11 @@ public class Player : MonoBehaviour {
     private BoxCollider2D       box_collider;
     private Rigidbody2D         m_body2d;
     private Sensor_Bandit       m_groundSensor;
-    private bool                m_grounded = false;
     private bool                m_combatIdle = false;
     private bool                m_isDead = false;
 
     // Use this for initialization
     void Start () {
-
-        health = maxHealth;
-
         m_animator = GetComponent<Animator>();
         m_body2d = GetComponent<Rigidbody2D>();
     }
@@ -68,14 +57,8 @@ public class Player : MonoBehaviour {
 
             m_isDead = !m_isDead;
         }
-            
-        //Hurt
-        else if (Input.GetKeyDown("q"))
-            m_animator.SetTrigger("Hurt");
 
         //Attack
-         
-
         else if (Input.GetKeyDown("e")){
            if(Time.time >= nextAttackTime) {
                     Attack();
@@ -121,11 +104,19 @@ public class Player : MonoBehaviour {
 
         Gizmos.DrawWireSphere(attackPoint.position,attackRange);
     }
-    public void Hurt(int hurt){
-        m_animator.SetTrigger("Hurt");
+    
+    public void OnCollisionEnter2D(Collision2D col){
+        var enemy = col.gameObject.GetComponent<Enemy>();
 
+        if (enemy != null){
+            TakeDamage(enemy.dmg);
+            m_animator.SetTrigger("Hurt");
+        }
+        Debug.Log("We have a collision");
+    }
 
-        health = health - hurt;
+    public override void Die(){
+        Destroy(gameObject);
     }
 
 }
