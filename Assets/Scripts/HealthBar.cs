@@ -17,7 +17,6 @@ public class HealthBar : MonoBehaviour{
     private void UpdateHealthbar(object sender, DamageTakenEventArgs eventArgs){
         var HealthBarPercent = (float)entity.Health/entity.MaxHealth;
         HealthBarSprite.transform.localScale = new Vector3(HealthBarPercent,0.5f,0);
-        Debug.Log($"Healthbar updated took{eventArgs.DamageTaken}");
     }
 
 

@@ -43,6 +43,16 @@ namespace Pathfinding
             {
                 if (ai != null) ai.destination = newPosition;
             }
+			
+			if (ai.destination.x < cam.transform.position.x){
+				transform.localScale = Vector3.Scale(transform.localScale, new Vector3(-1,1,1));
+                Debug.Log("Player is RIGHT");
+
+			} else if (ai.destination.x > cam.transform.position.x){
+				transform.localScale = Vector3.Scale(transform.localScale, new Vector3(-1,1,1));
+                Debug.Log("Player is LEFT");
+			}
+
         }
     }
 }

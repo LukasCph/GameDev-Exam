@@ -9,6 +9,7 @@ public class Player : Entity {
     float nextAttackTime = 0f;
     public LayerMask enemyLayers;
     public int attackDamage;
+    public SpriteRenderer sprite;
 
     public Vector2 speed = new Vector2(50,50);
 
@@ -49,13 +50,8 @@ public class Player : Entity {
 
         // -- Handle Animations --
         //Death
-        if (Input.GetKeyDown("f")) {
-            if(!m_isDead)
+        if (Health <= 0) {
                 m_animator.SetTrigger("Death");
-            else
-                m_animator.SetTrigger("Recover");
-
-            m_isDead = !m_isDead;
         }
 
         //Attack
@@ -93,7 +89,6 @@ public class Player : Entity {
         foreach(Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
-            Debug.Log("We hit "+enemy.name+ "and inflicted " +attackDamage +"damage" );
         }
     }
 

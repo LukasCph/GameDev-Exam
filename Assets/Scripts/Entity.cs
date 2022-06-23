@@ -14,7 +14,6 @@ public abstract class Entity : MonoBehaviour{
 
     public void TakeDamage(int hurt){
         Health -= hurt;
-        Debug.Log("Health is currenty: " + Health);
 
         if (Health <= 0){
             Die();

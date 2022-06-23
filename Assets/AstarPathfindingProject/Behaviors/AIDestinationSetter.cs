@@ -19,6 +19,7 @@ namespace Pathfinding {
 
 		public Transform target;
 		IAstarAI ai;
+		public Transform AiPos;
 
 		void OnEnable () {
 			target = Camera.main.transform;
@@ -39,8 +40,16 @@ namespace Pathfinding {
 		
 		/// <summary>Updates the AI's destination every frame</summary>
 		void Update () {
-			
+			AiPos = this.gameObject.transform.GetChild(0);
 			if (target != null && ai != null) ai.destination = target.position;
+
+			if (AiPos.position.x > target.position.x){
+				AiPos.localScale = new Vector3(1, 1, 1);
+
+			} else {
+				AiPos.localScale = new Vector3(-1, 1, 1);
+			}
+
 		}
 	}
 }
