@@ -10,6 +10,7 @@ public class Player : Entity {
     public LayerMask enemyLayers;
     public int attackDamage;
     public SpriteRenderer sprite;
+    public Transform PlayerHealthBar;
 
     public Vector2 speed = new Vector2(50,50);
 
@@ -18,7 +19,6 @@ public class Player : Entity {
     private Rigidbody2D         m_body2d;
     private Sensor_Bandit       m_groundSensor;
     private bool                m_combatIdle = false;
-    private bool                m_isDead = false;
 
     // Use this for initialization
     void Start () {
@@ -28,16 +28,21 @@ public class Player : Entity {
 	
 	// Update is called once per frame
 	void Update () {
+        PlayerHealthBar = gameObject.transform.GetChild(3);
 
         // -- Handle input and movement --
         float inputY = Input.GetAxis("Vertical");
         float inputX = Input.GetAxis("Horizontal");
 
         // Swap direction of sprite depending on walk direction
-        if (inputX > 0)
+        if (inputX > 0) {
             transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
-        else if (inputX < 0)
+            PlayerHealthBar.transform.localScale = new Vector3(-0.5f, 0.5f, 1.0f);
+        }
+        else if (inputX < 0){
+            PlayerHealthBar.transform.localScale = new Vector3(0.5f, 0.5f, 1.0f);
             transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        }
 
         // Move
         m_body2d.velocity = new Vector2(inputX * 0, 0);
@@ -105,9 +110,7 @@ public class Player : Entity {
 
         if (enemy != null){
             TakeDamage(enemy.dmg);
-            m_animator.SetTrigger("Hurt");
         }
-        Debug.Log("We have a collision");
     }
 
     public override void Die(){
