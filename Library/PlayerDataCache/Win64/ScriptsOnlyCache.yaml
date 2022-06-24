@@ -14,6 +14,10 @@ ScriptsOnlyBuild:
     - Pathfinding.AIDestinationSetter
     - Pathfinding.AIPath
     - Pathfinding.Seeker
+    AstarPathfindingProjectEditor.dll:
+    - Pathfinding.SeekerEditor
+    PackageToolsEditor.dll:
+    - Pathfinding.EditorBase
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
@@ -1492,4 +1496,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/EG/Desktop/Game.exe
+  playerPath: C:/Users/Lukas/OneDrive/Desktop/Game/Game.exe
